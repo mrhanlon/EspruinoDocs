@@ -67,13 +67,17 @@ Now you can type commands and they will be executed (you can also copy and paste
 
 Try typing the following, and press 'Enter' after it:
 
-```1+2```
+```
+1+2
+```
 
 This should return ```=3```. If it doesn't, there might have been some text entered already by the terminal application. Press ```Ctrl-C``` to clear this, and try again.
 
 Every time you type a command and press enter, it will be executed immediately. ```=``` will be displayed followed by the result. If there is no result (for instance if you were executing a function that returned no value), ```=undefined``` is displayed.
 
-```digitalWrite(LED1,1)```
+```
+digitalWrite(LED1,1)
+```
 
 ```=undefined``` will be displayed, however the LED1 light on the board will light up. This allows you to set voltages that come out of the processor (1=3.3 volts, 0=0 volts). Instead of LED1, you can use any pin name, such as ```A1``` or ```D5```.
 
@@ -81,7 +85,9 @@ Now, press the 'up' arrow. This will display the last command you ran, and will 
 
 It should now look like this:
 
-```digitalWrite(LED1,0)```
+```
+digitalWrite(LED1,0)
+```
 
 You can now write functions. Type the following:
 
@@ -102,19 +108,25 @@ The next line takes the changed value of 'on' (either true of false) and applies
 
 Now we can try it, type the following and hit enter:
 
-```toggle()```
+```
+toggle()
+```
 
 If you want to run it again, just hit the up arrow (to find the command in history) followed by enter. Every time you run it, the LED will turn on or off.
 
 Now type:
 
-```var interval = setInterval(toggle, 500)```
+```
+var interval = setInterval(toggle, 500)
+```
 
 This will call the 'toggle' function every 500ms (eg. twice a second). The new variable 'interval' (which is defined by 'var') is a reference to the timer we have created - this will be useful later!
 
 But what if we want to change the 'toggle' function? Type:
 
-```edit(toggle)```
+```
+edit(toggle)
+```
 
 You can also get a similar effect by hitting the up arrow until you get to the command where you defined 'toggle'. Now the Function is displayed, press the left arrow to move the cursor backwards, and start to edit the function. Add a new line at the end so that it looks like this (to add a line after 'digitalWrite', move the cursor to the end of the line, and press 'enter'):
 
@@ -130,15 +142,21 @@ Now, move the cursor to the end of the last line using the arrow keys, and press
 
 You can now change the speed to the lights, using this command:
 
-```changeInterval(interval, 200);```
+```
+changeInterval(interval, 200);
+```
 
 And if you want your lights to stop flashing - just type this:
 
-```clearInterval(interval);```
+```
+clearInterval(interval);
+```
 
 If you want to start completely from scratch and wipe out everything you have done, just type:
 
-```reset()```
+```
+reset()
+```
 
 If you press the reset button on the board, Espruino will also reset. However we don't recommend this - on most boards this will reset the USB connection as well, so you may need to restart your terminal application, or in some cases even unplug and re-plug the device.
 
